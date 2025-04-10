@@ -46,7 +46,7 @@ const ContactPage = () => {
                   <Phone className="text-saml-600 w-6 h-6 mt-1 mr-4" />
                   <div>
                     <h3 className="text-lg font-medium text-gray-900">Call Us</h3>
-                    <p className="text-gray-600">+27 (0) 123 456 789</p>
+                    <p className="text-gray-600">+27 72 208 4032</p>
                   </div>
                 </div>
                 
@@ -55,10 +55,8 @@ const ContactPage = () => {
                   <div>
                     <h3 className="text-lg font-medium text-gray-900">Visit Us</h3>
                     <p className="text-gray-600">
-                      123 Business Park<br />
-                      Sandton<br />
-                      Johannesburg<br />
-                      South Africa
+                      Transwerke, Sam Hancock St,<br />
+                      Braamfontein, Johannesburg, 2017
                     </p>
                   </div>
                 </div>

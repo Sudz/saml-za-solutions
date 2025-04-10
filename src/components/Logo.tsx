@@ -8,8 +8,11 @@ interface LogoProps {
 const Logo: React.FC<LogoProps> = ({ className = "" }) => {
   return (
     <div className={`flex items-center ${className}`}>
-      <span className="text-2xl font-bold text-saml-600">SAML</span>
-      <span className="text-xl font-medium text-gray-700">.co.za</span>
+      <img 
+        src="/lovable-uploads/d604e3bd-8d7a-40ba-bc34-c49edaf297c2.png" 
+        alt="SAML 10X NOT 10%" 
+        className="h-12 w-auto" 
+      />
     </div>
   );
 };

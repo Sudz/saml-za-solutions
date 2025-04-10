@@ -75,11 +75,14 @@ const Footer = () => {
               </li>
               <li className="flex items-start">
                 <Phone size={18} className="text-saml-600 flex-shrink-0 mr-2 mt-1" />
-                <span className="text-gray-600">+27 (0) 123 456 789</span>
+                <span className="text-gray-600">+27 72 208 4032</span>
               </li>
               <li className="flex items-start">
                 <MapPin size={18} className="text-saml-600 flex-shrink-0 mr-2 mt-1" />
-                <span className="text-gray-600">Johannesburg, South Africa</span>
+                <span className="text-gray-600">
+                  Transwerke, Sam Hancock St,<br />
+                  Braamfontein, Johannesburg, 2017
+                </span>
               </li>
             </ul>
           </div>

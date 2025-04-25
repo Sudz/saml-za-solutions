@@ -1,5 +1,4 @@
-
-import React from 'react';
+import React, { useState } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Button } from "@/components/ui/button";
@@ -8,6 +7,40 @@ import { Textarea } from "@/components/ui/textarea";
 import { Mail, Phone, MapPin, MessageSquare } from 'lucide-react';
 
 const ContactPage = () => {
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    company: '',
+    service: '',
+    message: ''
+  });
+
+  const [successMessage, setSuccessMessage] = useState('');
+
+  const handleChange = (e) => {
+    const { id, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [id]: value
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Handle form submission logic here
+    setSuccessMessage('Thank you for your message! We will get back to you shortly.');
+    // Reset form fields
+    setFormData({
+      firstName: '',
+      lastName: '',
+      email: '',
+      company: '',
+      service: '',
+      message: ''
+    });
+  };
+
   return (
     <div className="min-h-screen">
       <Navbar />
@@ -58,6 +91,16 @@ const ContactPage = () => {
                       Transwerke, Sam Hancock St,<br />
                       Braamfontein, Johannesburg, 2017
                     </p>
+                    <p className="text-gray-600">
+                      <a 
+                        href="https://www.google.com/maps/place/Transwerke,+Braamfontein,+Johannesburg,+2017/@-26.1872582,28.0386757,17z/data=!3m1!4b1!4m6!3m5!1s0x1e950c17e427e779:0x679657a0020ac63e!8m2!3d-26.1872582!4d28.0412506!16s%2Fg%2F11bwf_kg41?entry=ttu&g_ep=EgoyMDI1MDQyMy4wIKXMDSoASAFQAw%3D%3D"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:text-saml-600"
+                      >
+                        View on Google Maps
+                      </a>
+                    </p>
                   </div>
                 </div>
                 
@@ -92,7 +135,7 @@ const ContactPage = () => {
             
             <div className="bg-white p-8 rounded-xl shadow-md">
               <h2 className="text-2xl font-bold text-gray-900 mb-6">Send Us a Message</h2>
-              <form className="space-y-6">
+              <form className="space-y-6" onSubmit={handleSubmit}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-1">
@@ -103,6 +146,8 @@ const ContactPage = () => {
                       type="text" 
                       placeholder="Your first name" 
                       className="w-full"
+                      value={formData.firstName}
+                      onChange={handleChange}
                     />
                   </div>
                   <div>
@@ -114,6 +159,8 @@ const ContactPage = () => {
                       type="text" 
                       placeholder="Your last name" 
                       className="w-full"
+                      value={formData.lastName}
+                      onChange={handleChange}
                     />
                   </div>
                 </div>
@@ -127,6 +174,8 @@ const ContactPage = () => {
                     type="email" 
                     placeholder="Your email address" 
                     className="w-full"
+                    value={formData.email}
+                    onChange={handleChange}
                   />
                 </div>
                 
@@ -139,6 +188,8 @@ const ContactPage = () => {
                     type="text" 
                     placeholder="Your company name" 
                     className="w-full"
+                    value={formData.company}
+                    onChange={handleChange}
                   />
                 </div>
                 
@@ -149,6 +200,8 @@ const ContactPage = () => {
                   <select 
                     id="service" 
                     className="w-full rounded-md border border-gray-300 px-3 py-2 focus:border-saml-500 focus:ring-saml-500"
+                    value={formData.service}
+                    onChange={handleChange}
                   >
                     <option value="">Select a service</option>
                     <option value="dbms">Database Management Systems</option>
@@ -168,6 +221,8 @@ const ContactPage = () => {
                     id="message" 
                     placeholder="Tell us about your project or inquiry" 
                     className="w-full min-h-[120px]"
+                    value={formData.message}
+                    onChange={handleChange}
                   />
                 </div>
                 
@@ -177,6 +232,11 @@ const ContactPage = () => {
                   </Button>
                 </div>
               </form>
+              {successMessage && (
+                <div className="mt-6 text-green-600 font-medium">
+                  {successMessage}
+                </div>
+              )}
             </div>
           </div>
         </div>

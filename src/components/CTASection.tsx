@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Button } from "@/components/ui/button";
+import { Link } from 'react-router-dom';
 
 const CTASection = () => {
   return (
@@ -15,8 +16,8 @@ const CTASection = () => {
                 Our team of South African database experts is ready to help you implement a solution that meets your specific business needs.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
-                <Button className="bg-white text-saml-700 hover:bg-blue-50 px-6 py-6 text-lg font-semibold rounded-lg shadow-lg transition duration-300">
-                  Schedule a Consultation
+                <Button asChild className="bg-white text-saml-700 hover:bg-blue-50 px-6 py-6 text-lg font-semibold rounded-lg shadow-lg transition duration-300">
+                  <Link to="/contact">Schedule a Consultation</Link>
                 </Button>
                 <Button 
                   variant="outline" 

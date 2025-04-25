@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Logo from './Logo';
 import { Twitter, Github, Mail, Phone, MapPin } from 'lucide-react';
 
@@ -12,6 +12,13 @@ const sqlServices = [
 ];
 
 const Footer = () => {
+  const navigate = useNavigate();
+
+  const handleServiceClick = (serviceId: string) => {
+    navigate(`/services/${serviceId}`);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <footer className="bg-gray-50 border-t border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -52,12 +59,12 @@ const Footer = () => {
             <ul className="space-y-2">
               {sqlServices.map((service) => (
                 <li key={service.id}>
-                  <Link 
-                    to={`/services/${service.id}`} 
+                  <button 
+                    onClick={() => handleServiceClick(service.id)}
                     className="text-gray-600 hover:text-saml-600"
                   >
                     {service.name}
-                  </Link>
+                  </button>
                 </li>
               ))}
             </ul>

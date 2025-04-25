@@ -1,8 +1,15 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Logo from './Logo';
 import { Twitter, Github, Mail, Phone, MapPin } from 'lucide-react';
+
+const sqlServices = [
+  { id: 'mysql', name: 'MySQL Services' },
+  { id: 'postgresql', name: 'PostgreSQL Services' },
+  { id: 'mssql', name: 'MS SQL Server' },
+  { id: 'oracle', name: 'Oracle Database' },
+  { id: 'data-warehouse', name: 'Data Warehouse' }
+];
 
 const Footer = () => {
   return (
@@ -43,11 +50,16 @@ const Footer = () => {
           <div>
             <h3 className="text-gray-900 font-semibold mb-4">Solutions</h3>
             <ul className="space-y-2">
-              <li><Link to="/services/mysql" className="text-gray-600 hover:text-saml-600">MySQL Services</Link></li>
-              <li><Link to="/services/postgresql" className="text-gray-600 hover:text-saml-600">PostgreSQL Services</Link></li>
-              <li><Link to="/services/mssql" className="text-gray-600 hover:text-saml-600">MS SQL Server</Link></li>
-              <li><Link to="/services/oracle" className="text-gray-600 hover:text-saml-600">Oracle Database</Link></li>
-              <li><Link to="/services/data-warehouse" className="text-gray-600 hover:text-saml-600">Data Warehouse</Link></li>
+              {sqlServices.map((service) => (
+                <li key={service.id}>
+                  <Link 
+                    to={`/services/${service.id}`} 
+                    className="text-gray-600 hover:text-saml-600"
+                  >
+                    {service.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
           

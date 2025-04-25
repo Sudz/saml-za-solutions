@@ -75,3 +75,51 @@ Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-trick
 ## Hosting off GitHub
 
 To host this project off GitHub, use the following link: [Preview](https://preview--saml-za-solutions.lovable.app/)
+
+## GitHub Pages
+
+To deploy this project to GitHub Pages, follow these steps:
+
+1. Create a new GitHub Actions workflow file at `.github/workflows/deploy.yml` with the following content:
+
+```yaml
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build project
+        run: npm run build
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+```
+
+2. Commit and push the changes to your repository.
+
+3. Go to the repository settings on GitHub, navigate to the "Pages" section, and select the `gh-pages` branch as the source for GitHub Pages.
+
+4. Your project should now be deployed to GitHub Pages at `https://sudz.github.io/saml-za-solutions/`.
+
+If you encounter any issues with GitHub Pages, ensure that the workflow file is correctly configured and that the `gh-pages` branch is selected as the source in the repository settings.

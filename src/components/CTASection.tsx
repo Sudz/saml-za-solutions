@@ -18,7 +18,11 @@ const CTASection = () => {
                 <Button className="bg-white text-saml-700 hover:bg-blue-50 px-6 py-6 text-lg font-semibold rounded-lg shadow-lg transition duration-300">
                   Schedule a Consultation
                 </Button>
-                <Button variant="outline" className="bg-saml-700 border-white text-white hover:bg-saml-800 px-6 py-6 text-lg rounded-lg font-semibold shadow-lg transition duration-300">
+                <Button 
+                  variant="outline" 
+                  className="bg-saml-700 border-white text-white hover:bg-saml-800 px-6 py-6 text-lg rounded-lg font-semibold shadow-lg transition duration-300"
+                  onClick={() => window.open('https://sudz.netlify.app/', '_blank')}
+                >
                   View Pricing Options
                 </Button>
               </div>

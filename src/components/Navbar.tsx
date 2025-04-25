@@ -35,8 +35,11 @@ const Navbar = () => {
             <Link to="/contact" className="text-gray-700 hover:text-saml-600 font-medium">
               Contact
             </Link>
-            <Button className="bg-saml-600 hover:bg-saml-700 text-white">
-              Get Started
+            <Button 
+              className="bg-saml-600 hover:bg-saml-700 text-white"
+              onClick={() => window.open('https://github.com/gpt-omni/mini-omni', '_blank')}
+            >
+              View on GitHub
             </Button>
           </div>
           

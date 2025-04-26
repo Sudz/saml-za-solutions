@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Database, Server, Shield } from 'lucide-react';
+import { Database, Server, Snowflake, Cloud } from 'lucide-react';
 import ServiceCard, { ServiceProps } from './ServiceCard';
 
 const ServicesSection = () => {
@@ -110,6 +110,42 @@ const ServicesSection = () => {
       ],
       costRange: 'R20,000-R42,000/month for managed services (excluding AWS infrastructure costs)',
       highlight: 'Best for analytics workloads on AWS infrastructure',
+      category: 'Data Warehouse Solutions'
+    },
+    {
+      id: 'bigquery',
+      name: 'Google BigQuery',
+      icon: <Cloud className="text-blue-500" size={24} />,
+      description: 'Google BigQuery is a serverless, highly scalable, and cost-effective multi-cloud data warehouse designed for business agility.',
+      services: [
+        'BigQuery implementation and configuration',
+        'Data migration and integration',
+        'Query optimization',
+        'Security and access control setup',
+        'Cost optimization strategies',
+        'Machine learning integration',
+        'BI tool connection and visualization'
+      ],
+      costRange: 'R18,500-R38,500/month for managed services (excluding Google Cloud costs)',
+      highlight: 'Ideal for organizations requiring serverless data warehousing',
+      category: 'Data Warehouse Solutions'
+    },
+    {
+      id: 'snowflake',
+      name: 'Snowflake',
+      icon: <Snowflake className="text-blue-600" size={24} />,
+      description: 'Snowflake is a cloud-based data warehouse delivered as a Software-as-a-Service (SaaS) that offers full SQL database support and unique architecture designed for the cloud.',
+      services: [
+        'Snowflake implementation and architecture design',
+        'Data migration from existing platforms',
+        'Performance optimization',
+        'Security configuration',
+        'Cost management strategies',
+        'Integration with data pipeline tools',
+        'Training and support'
+      ],
+      costRange: 'R22,000-R47,000/month for managed services (excluding Snowflake subscription costs)',
+      highlight: 'Perfect for enterprises needing scalable cloud data warehousing',
       category: 'Data Warehouse Solutions'
     }
   ];

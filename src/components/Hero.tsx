@@ -1,7 +1,6 @@
-
 import React from 'react';
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, ShieldCheck } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Hero = () => {
@@ -19,6 +18,25 @@ const Hero = () => {
             <p className="mt-6 text-lg md:text-xl text-gray-600 max-w-2xl">
               Optimized database services designed for South African businesses, with POPIA compliance and load shedding resilience built-in.
             </p>
+            
+            <div className="mt-6 space-y-3 bg-saml-50 p-4 rounded-lg">
+              <div className="flex items-center space-x-3">
+                <ShieldCheck className="text-saml-600 h-6 w-6" />
+                <h3 className="font-semibold text-gray-800">South African Regulatory Compliance</h3>
+              </div>
+              <ul className="text-gray-600 space-y-2 pl-9">
+                <li className="list-disc">
+                  <strong>POPIA Compliance:</strong> Full compliance with the Protection of Personal Information Act
+                </li>
+                <li className="list-disc">
+                  <strong>FICA Requirements:</strong> Solutions for financial institutions' data management
+                </li>
+                <li className="list-disc">
+                  <strong>B-BBEE Certified:</strong> Level 2 contributor improving your procurement recognition
+                </li>
+              </ul>
+            </div>
+
             <div className="mt-8 flex flex-wrap gap-4">
               <Button asChild className="bg-saml-600 hover:bg-saml-700 text-white px-6 py-6 rounded-lg font-semibold text-lg">
                 <Link to="/contact">Get a Free Consultation</Link>

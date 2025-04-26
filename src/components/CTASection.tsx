@@ -4,6 +4,10 @@ import { Button } from "@/components/ui/button";
 import { Link } from 'react-router-dom';
 
 const CTASection = () => {
+  const scrollToTop = () => {
+    window.scrollTo(0, 0);
+  };
+
   return (
     <section className="py-12 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -17,13 +21,13 @@ const CTASection = () => {
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Button asChild className="bg-white text-saml-700 hover:bg-blue-50 px-6 py-6 text-lg font-semibold rounded-lg shadow-lg transition duration-300">
-                  <Link to="/contact">Schedule a Consultation</Link>
+                  <Link to="/contact" onClick={scrollToTop}>Schedule a Consultation</Link>
                 </Button>
                 <Button asChild
                   variant="outline" 
                   className="bg-saml-700 border-white text-white hover:bg-saml-800 px-6 py-6 text-lg rounded-lg font-semibold shadow-lg transition duration-300"
                 >
-                  <Link to="/services">View Pricing Options</Link>
+                  <Link to="/services" onClick={scrollToTop}>View Pricing Options</Link>
                 </Button>
               </div>
             </div>

@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Database, Server, Shield } from 'lucide-react';
 import ServiceCard, { ServiceProps } from './ServiceCard';
@@ -10,7 +9,7 @@ const ServicesSection = () => {
     {
       id: 'dbms',
       name: 'Database Management Systems (DBMS)',
-      icon: <Server className="text-saml-600" size={24} />,
+      icon: <Server className="text-saml-600 h-12 w-12" />,
       description: 'Our comprehensive DBMS services provide end-to-end management of your database infrastructure, ensuring optimal performance, security, and POPIA compliance.',
       services: [
         'Database design and architecture consulting',
@@ -22,7 +21,7 @@ const ServicesSection = () => {
         'High availability and disaster recovery solutions for the SA market'
       ],
       costRange: 'R25,000-R50,000/month depending on database size and complexity',
-      highlight: 'Best for enterprises needing full database lifecycle management'
+      highlight: 'POPIA Compliant Database Solutions'
     },
     {
       id: 'mysql',
@@ -125,9 +124,9 @@ const ServicesSection = () => {
     <section className="py-16 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">Our SQL Solutions</h2>
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">POPIA Compliant Database Solutions</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            We offer a comprehensive range of database services tailored to meet the specific needs of South African businesses.
+            All our services are designed to ensure compliance with the Protection of Personal Information Act
           </p>
         </div>
         

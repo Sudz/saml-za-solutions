@@ -2,6 +2,7 @@
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
   return (
@@ -19,11 +20,13 @@ const Hero = () => {
               Optimized database services designed for South African businesses, with POPIA compliance and load shedding resilience built-in.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
-              <Button className="bg-saml-600 hover:bg-saml-700 text-white px-6 py-6 rounded-lg font-semibold text-lg">
-                Get a Free Consultation
+              <Button asChild className="bg-saml-600 hover:bg-saml-700 text-white px-6 py-6 rounded-lg font-semibold text-lg">
+                <Link to="/contact">Get a Free Consultation</Link>
               </Button>
-              <Button variant="outline" className="border-saml-600 text-saml-600 hover:bg-saml-50 px-6 py-6 rounded-lg font-semibold text-lg">
-                View Solutions <ArrowRight className="ml-2 h-5 w-5" />
+              <Button asChild variant="outline" className="border-saml-600 text-saml-600 hover:bg-saml-50 px-6 py-6 rounded-lg font-semibold text-lg">
+                <Link to="/services">
+                  View Solutions <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
               </Button>
             </div>
           </div>

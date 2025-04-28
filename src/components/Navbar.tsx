@@ -23,20 +23,17 @@ const Navbar = () => {
           </div>
           
           <div className="hidden md:flex items-center space-x-8">
-            <Link to="/" className="text-gray-700 hover:text-saml-600 font-medium">
+            <Link to="/" className="text-gray-700 hover:text-saml-600 font-medium transition-colors duration-200">
               Home
             </Link>
-            <Link to="/services" className="text-gray-700 hover:text-saml-600 font-medium">
+            <Link to="/services" className="text-gray-700 hover:text-saml-600 font-medium transition-colors duration-200">
               Services
             </Link>
-            <Link to="/about" className="text-gray-700 hover:text-saml-600 font-medium">
-              About Us
-            </Link>
-            <Link to="/contact" className="text-gray-700 hover:text-saml-600 font-medium">
+            <Link to="/contact" className="text-gray-700 hover:text-saml-600 font-medium transition-colors duration-200">
               Contact
             </Link>
             <Button 
-              className="bg-saml-600 hover:bg-saml-700 text-white"
+              className="bg-saml-600 hover:bg-saml-700 text-white transition-all duration-200 transform hover:scale-105"
               onClick={() => window.open('https://github.com/gpt-omni/mini-omni', '_blank')}
             >
               View on GitHub
@@ -46,7 +43,7 @@ const Navbar = () => {
           <div className="md:hidden flex items-center">
             <button
               onClick={toggleMenu}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-saml-600 focus:outline-none"
+              className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-saml-600 focus:outline-none transition-colors duration-200"
             >
               {isMenuOpen ? (
                 <X className="h-6 w-6" />
@@ -63,34 +60,27 @@ const Navbar = () => {
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             <Link
               to="/"
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-saml-600 hover:bg-gray-50"
+              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-saml-600 hover:bg-gray-50 transition-colors duration-200"
               onClick={() => setIsMenuOpen(false)}
             >
               Home
             </Link>
             <Link
               to="/services"
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-saml-600 hover:bg-gray-50"
+              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-saml-600 hover:bg-gray-50 transition-colors duration-200"
               onClick={() => setIsMenuOpen(false)}
             >
               Services
             </Link>
             <Link
-              to="/about"
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-saml-600 hover:bg-gray-50"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              About Us
-            </Link>
-            <Link
               to="/contact"
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-saml-600 hover:bg-gray-50"
+              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-saml-600 hover:bg-gray-50 transition-colors duration-200"
               onClick={() => setIsMenuOpen(false)}
             >
               Contact
             </Link>
             <div className="px-3 py-2">
-              <Button className="w-full bg-saml-600 hover:bg-saml-700 text-white">
+              <Button className="w-full bg-saml-600 hover:bg-saml-700 text-white transition-all duration-200 transform hover:scale-105">
                 Get Started
               </Button>
             </div>

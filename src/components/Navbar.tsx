@@ -155,7 +155,10 @@ const Navbar = () => {
               Contact
             </Link>
             <div className="px-3 py-2">
-              <Button className="w-full bg-saml-600 hover:bg-saml-700 text-white transition-all duration-200 transform hover:scale-105">
+              <Button 
+                className="w-full bg-saml-600 hover:bg-saml-700 text-white transition-all duration-200 transform hover:scale-105"
+                onClick={() => window.location.href = 'mailto:sudhir@saml.co.za'}
+              >
                 Get Started
               </Button>
             </div>

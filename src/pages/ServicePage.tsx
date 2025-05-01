@@ -3,15 +3,14 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import ServicesSection from '@/components/ServicesSection';
 import CTASection from '@/components/CTASection';
+import { services } from '@/data/services';
 
 const ServicePage = () => {
   const { serviceId } = useParams();
   
-  // Find the selected service from ServicesSection's services array
-  const service = ServicesSection().props.children.props.children[2].props.children
-    .find((service: any) => service.key === serviceId)?.props.service;
+  // Find the selected service from the services array
+  const service = services.find(service => service.id === serviceId);
 
   if (!service) {
     return (
@@ -43,7 +42,7 @@ const ServicePage = () => {
           <div className="bg-white rounded-xl shadow-lg p-8">
             <h2 className="text-2xl font-semibold mb-6">Services Included</h2>
             <ul className="space-y-4">
-              {service.services.map((item: string, index: number) => (
+              {service.services.map((item, index) => (
                 <li key={index} className="flex items-start">
                   <span className="text-saml-600 mr-2">✓</span>
                   <span>{item}</span>
